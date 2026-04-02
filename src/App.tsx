@@ -24,6 +24,7 @@ import {
   X
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
+import AIAssistant from "./components/AIAssistant";
 
 // --- Types ---
 
@@ -62,7 +63,7 @@ const MENU_ITEMS: MenuItem[] = [
     category: "muscle",
     calories: 580,
     protein: 32,
-    image: "https://picsum.photos/seed/pork-rice-dish/400/300"
+    image: "https://loremflickr.com/800/600/food,pork,rice,bento?lock=1"
   },
   {
     id: "2",
@@ -72,7 +73,7 @@ const MENU_ITEMS: MenuItem[] = [
     category: "muscle",
     calories: 620,
     protein: 38,
-    image: "https://picsum.photos/seed/chicken-leg-meal/400/300"
+    image: "https://loremflickr.com/800/600/food,chicken,leg,meal?lock=2"
   },
   {
     id: "3",
@@ -82,7 +83,7 @@ const MENU_ITEMS: MenuItem[] = [
     category: "child",
     calories: 650,
     protein: 28,
-    image: "https://picsum.photos/seed/pork-chop-bento/400/300"
+    image: "https://loremflickr.com/800/600/food,pork,chop,rice?lock=3"
   },
   {
     id: "4",
@@ -92,7 +93,7 @@ const MENU_ITEMS: MenuItem[] = [
     category: "gut",
     calories: 420,
     protein: 25,
-    image: "https://picsum.photos/seed/sliced-pork-belly/400/300"
+    image: "https://loremflickr.com/800/600/food,pork,sliced,healthy?lock=4"
   },
   {
     id: "5",
@@ -102,7 +103,7 @@ const MENU_ITEMS: MenuItem[] = [
     category: "elderly",
     calories: 480,
     protein: 26,
-    image: "https://picsum.photos/seed/grilled-mackerel-fish/400/300"
+    image: "https://loremflickr.com/800/600/food,fish,mackerel,grilled?lock=5"
   },
   {
     id: "6",
@@ -112,7 +113,7 @@ const MENU_ITEMS: MenuItem[] = [
     category: "muscle",
     calories: 560,
     protein: 30,
-    image: "https://picsum.photos/seed/kimchi-pork-bowl/400/300"
+    image: "https://loremflickr.com/800/600/food,kimchi,pork,bowl?lock=6"
   }
 ];
 
@@ -265,7 +266,7 @@ export default function App() {
           >
             <div className="aspect-square rounded-[40px] overflow-hidden shadow-2xl rotate-3">
               <img 
-                src="https://picsum.photos/seed/bento-box-lunch/800/800" 
+                src="https://loremflickr.com/1000/1000/food,bento,healthy?lock=10" 
                 alt="Healthy Meal" 
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
@@ -442,18 +443,18 @@ export default function App() {
           <div className="order-1 lg:order-2 grid grid-cols-2 gap-4">
             <div className="space-y-4">
               <div className="aspect-[3/4] rounded-[32px] overflow-hidden bg-gray-200">
-                <img src="https://picsum.photos/seed/kitchen1/400/600" alt="Kitchen" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                <img src="https://picsum.photos/seed/modern-kitchen-cooking/600/800" alt="Kitchen" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
               </div>
               <div className="aspect-square rounded-[32px] overflow-hidden bg-gray-200">
-                <img src="https://picsum.photos/seed/veggies/400/400" alt="Vegetables" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                <img src="https://picsum.photos/seed/fresh-organic-vegetables/600/600" alt="Vegetables" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
               </div>
             </div>
             <div className="space-y-4 pt-12">
               <div className="aspect-square rounded-[32px] overflow-hidden bg-gray-200">
-                <img src="https://picsum.photos/seed/chef/400/400" alt="Chef" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                <img src="https://picsum.photos/seed/professional-chef-plating/600/600" alt="Chef" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
               </div>
               <div className="aspect-[3/4] rounded-[32px] overflow-hidden bg-gray-200">
-                <img src="https://picsum.photos/seed/meal/400/600" alt="Meal" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                <img src="https://picsum.photos/seed/delicious-healthy-meal/600/800" alt="Meal" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
               </div>
             </div>
           </div>
@@ -593,6 +594,7 @@ export default function App() {
           </>
         )}
       </AnimatePresence>
+      <AIAssistant menuItems={MENU_ITEMS} onAddToCart={addToCart} />
     </div>
   );
 }
